@@ -1,0 +1,28 @@
+{
+  "checked_at": "2026-10-06",
+  "code_commit": "c6680c1c48396221dfb1539989da4e4863dd54eb",
+  "ci": "https://github.com/Hadezu/postgres-import-rehearsal/actions/runs/37413408638",
+  "results": {
+    "windows": {
+      "tests": "53",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "44.627"
+    },
+    "linux312": {
+      "tests": "53",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "6.502"
+    },
+    "linux314": {
+      "tests": "53",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "7.950"
+    }
+  }
+}

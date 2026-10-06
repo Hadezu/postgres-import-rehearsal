@@ -8,13 +8,21 @@ Checked 2026-10-06. This file separates local checks from remote CI; a configure
 - 53 tests passed, zero failures/skips, 44.71 seconds. JUnit was generated at `test-results/junit.xml`.
 - Includes actual process death before commit (apply and undo), lost acknowledgement after commit, concurrent apply/undo, overlapping plans, a normal writer during import, lock timeout, FK failure, ABA changes, ledger failure and HTML escaping.
 - Six-step demonstration ran against a separate real database with synthetic data. Its row/relationship readbacks are in `evidence/demo.json`; the HTML and video reflect those results.
-- Chromium: all six steps, desktop 1280×900, mobile 390×844, keyboard activation, no page errors or page-level horizontal overflow. Desktop screenshot visually inspected.
+- Chromium: all six steps, desktop 1280×900, mobile 390×844, keyboard activation, no page errors or page-level horizontal overflow. Desktop and mobile screenshots visually inspected. Video additionally scrolls to the actual row differences; this browser check was rerun after that recording improvement.
 - Ruff lint/format passed. Source distribution and wheel built successfully.
 
 ## Remote verification
 
-GitHub Actions will run the same tests on Python 3.12 and 3.14 with PostgreSQL 18.6, browser checks, packaging and a separate fresh Docker Compose walkthrough. Status pending until an actual run is inspected; this section will be updated before delivery.
+[Run 37413408638](https://github.com/Hadezu/postgres-import-rehearsal/actions/runs/37413408638) **SUCCESS**, source `c6680c1c48396221dfb1539989da4e4863dd54eb`.
+
+- Python 3.12 + PostgreSQL 18.6: 53 tests, zero failures/errors/skips.
+- Python 3.14 + PostgreSQL 18.6: 53 tests, zero failures/errors/skips.
+- Both jobs passed lint/format, actual database walkthrough, desktop/mobile/keyboard browser checks, and source/wheel packaging.
+- The separate Compose job built the Docker image, started a fresh PostgreSQL instance, initialized the schema, completed all six demo states, checked the report and removed only its disposable volume.
+- Both job artifacts were downloaded and their JUnit files read back. Counts/timings are preserved in `evidence/test-summary.json`.
+
+The final documentation/recording commit follows this verified implementation; the workflow runs again on publication. The repository's Actions page shows that run separately. No unexecuted check is counted as PASS.
 
 ## Limits
 
-Small bounded fixture and targeted failure/concurrency tests, not a production load/security audit. Local Docker is unavailable; Compose is to be verified in CI. No external database, commercial CRM, client data, production site, paid API or client mailbox was touched. Existing unrelated local website changes were left alone.
+Small bounded fixture and targeted failure/concurrency tests, not a production load/security audit. Local Docker is unavailable; Compose was verified in Linux CI. No external database, commercial CRM, client data, production site, paid API or client mailbox was touched. Existing unrelated local website changes were left alone.

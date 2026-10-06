@@ -31,11 +31,13 @@ with sync_playwright() as p:
         assert section.is_visible()
         assert page.locator("section:visible").count() == 1
         assert section.locator("tbody tr").count() == 3
-        page.wait_for_timeout(800)
+        page.evaluate("window.scrollTo({top: 360, behavior: 'smooth'})")
+        page.wait_for_timeout(1400)
     page.get_by_role("button", name="5 · Stale plan").click()
     page.screenshot(path=str(ROOT / "evidence/desktop.png"), full_page=True)
     page.get_by_role("button", name="6 · Protected undo").click()
     assert "REFUSED" in page.locator("#step-5").inner_text()
+    page.locator("#step-5 .table-wrap").scroll_into_view_if_needed()
     page.wait_for_timeout(1500)
     video = page.video
     ctx.close()
