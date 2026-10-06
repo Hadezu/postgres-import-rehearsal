@@ -1,5 +1,13 @@
 # PostgreSQL Import Rehearsal
 
+<!-- portfolio-navigation:start -->
+[← Project index](https://github.com/Hadezu#selected-implementations) · [Data migration](https://work.matiushkin.com/en/services/data-migration) · [Describe a similar task](https://work.matiushkin.com/en/contact?example=services%2Fdata-migration)
+
+**Review format:** Local PostgreSQL implementation and downloadable review. The portfolio example is a separate related demonstration.
+
+[Related interactive example](https://work.matiushkin.com/en/proof/migration) — a separate portfolio demonstration of the same problem.
+<!-- portfolio-navigation:end -->
+
 [![Verify real PostgreSQL](https://github.com/Hadezu/postgres-import-rehearsal/actions/workflows/verify.yml/badge.svg)](https://github.com/Hadezu/postgres-import-rehearsal/actions/workflows/verify.yml)
 
 **Review a CSV import before it writes. Apply the exact plan. Refuse an undo that would damage later work.**
