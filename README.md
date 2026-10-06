@@ -6,20 +6,9 @@
 
 Independent engineering example by [Ivan Matiushkin](https://work.matiushkin.com/en), extending the existing [Chinook](https://github.com/lerocha/chinook-database) relational schema. All people and businesses here are synthetic. This is not a client deployment.
 
-## Watch the demonstration
-
-Recorded import rehearsal with synthetic source data. Database snapshots and reproducible commands are linked below.
-
-https://github.com/user-attachments/assets/1a083144-4ade-4614-aaf3-c9f63145a25d
-
-<details>
-<summary>View a still frame</summary>
-
 ![Stale target refused, with an inspectable customer plan](evidence/desktop.png)
 
-</details>
-
-**[Download original recording](https://github.com/Hadezu/postgres-import-rehearsal/releases/download/v0.1.0/demo.webm)** · **[Download offline review](https://github.com/Hadezu/postgres-import-rehearsal/releases/download/v0.1.0/review.html)** · [Actual database snapshots](evidence/demo.json) · [Verification](docs/verification.md)
+**[Download offline review](https://github.com/Hadezu/postgres-import-rehearsal/releases/download/v0.1.0/review.html)** · [Actual database snapshots](evidence/demo.json) · [Verification](docs/verification.md)
 
 ## The problem this solves
 
@@ -102,3 +91,12 @@ Tests create uniquely named databases and remove only those databases. They use 
 Chinook's existing schema is Luis Rocha's work; the original permission notice, pinned source and extraction boundaries are in [vendor/chinook](vendor/chinook). No upstream customer data is included. My contribution is the importer, revision tracking, immutable plans, guarded undo, failure/concurrency tests, report, demo and CI. Implemented with Codex assistance and checked through executable tests and database/browser readback; AI use is not itself a quality guarantee.
 
 [Buyer evidence and gap analysis](docs/market-fit.md) · [Architecture and failure recovery](docs/architecture.md) · [Prepared EN/PL portfolio and email copy](docs/commercial-copy.md)
+
+<details>
+<summary>Technical verification recording</summary>
+
+Original test recording retained as supporting evidence. For the scenario, results and limitations, see the verification documentation above.
+
+[Download the original recording](https://github.com/Hadezu/postgres-import-rehearsal/releases/download/v0.1.0/demo.webm)
+
+</details>
