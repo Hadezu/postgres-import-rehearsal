@@ -109,3 +109,31 @@ def test_database_unavailable_cli_is_nonzero_and_redacts_password(db, raw, mappi
     )
     assert proc.returncode == 3 and "DATABASE_ERROR" in proc.stderr
     assert "redaction-test-password" not in proc.stderr + proc.stdout
+
+
+def test_help_on_legacy_windows_pipe():
+    proc = subprocess.run(
+        [sys.executable, "-m", "rehearsal.cli", "--help"],
+        env={**os.environ, "PYTHONIOENCODING": "ascii"},
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    assert proc.returncode == 0
+    assert "guarded undo" in proc.stdout
+
+
+def test_unicode_rows_survive_ascii_json_output(db, raw, mapping):
+    import json
+
+    p = plan_import(raw.replace(b"New Demo", "試験会社".encode()), mapping)
+    proc = subprocess.run(
+        [sys.executable, "-m", "rehearsal.cli", "show", p["id"]],
+        env={**os.environ, "PYTHONIOENCODING": "ascii"},
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    assert proc.returncode == 0
+    data = json.loads(proc.stdout)
+    assert data["payload"]["entries"][-1]["after"]["company"] == "試験会社"

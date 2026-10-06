@@ -12,7 +12,7 @@ from .report import render
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Chinook customer import: plan → review → apply → guarded undo"
+        description="Chinook customer import: plan -> review -> apply -> guarded undo"
     )
     sub = parser.add_subparsers(dest="command", required=True)
     p = sub.add_parser("plan")
@@ -39,7 +39,8 @@ def main():
             if args.command == "report":
                 args.output.write_text(render([result]), encoding="utf-8")
                 result = {"report": str(args.output), "status": result["status"]}
-        print(json.dumps(result, indent=2, ensure_ascii=False))
+        # ASCII JSON escapes preserve Unicode data even in a legacy Windows pipe.
+        print(json.dumps(result, indent=2, ensure_ascii=True))
     except Rejected as exc:
         print(json.dumps({"error": str(exc), "outcome": "REFUSED"}), file=sys.stderr)
         return 2
