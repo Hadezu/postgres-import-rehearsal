@@ -1,0 +1,971 @@
+[
+  {
+    "id": "720a4311-2144-416a-bdbe-cbcaf9acc566",
+    "digest": "a7594bed8d000f5aa34f4743c77e6de9095cee2c6ce796b914aa6e002aa0902c",
+    "payload": {
+      "counts": {
+        "INSERT": 1,
+        "UPDATE": 1,
+        "UNCHANGED": 1
+      },
+      "adapter": "chinook-customer-v1",
+      "entries": [
+        {
+          "after": {
+            "email": "ada@example.invalid",
+            "company": "North Demo",
+            "country": "Poland",
+            "last_name": "Sample",
+            "first_name": "Ada",
+            "customer_id": 1,
+            "support_rep_id": 1
+          },
+          "action": "UPDATE",
+          "before": {
+            "row": {
+              "fax": null,
+              "city": null,
+              "email": "ada@example.invalid",
+              "phone": null,
+              "state": null,
+              "address": "Synthetic address 1",
+              "company": "Old Demo",
+              "country": "Poland",
+              "last_name": "Sample",
+              "first_name": "Ada",
+              "customer_id": 1,
+              "postal_code": null,
+              "support_rep_id": 1
+            },
+            "revision": 1
+          }
+        },
+        {
+          "after": {
+            "email": "noah@example.invalid",
+            "company": "Studio Demo",
+            "country": "Poland",
+            "last_name": "Example",
+            "first_name": "Noah",
+            "customer_id": 2,
+            "support_rep_id": 1
+          },
+          "action": "UNCHANGED",
+          "before": {
+            "row": {
+              "fax": null,
+              "city": null,
+              "email": "noah@example.invalid",
+              "phone": null,
+              "state": null,
+              "address": null,
+              "company": "Studio Demo",
+              "country": "Poland",
+              "last_name": "Example",
+              "first_name": "Noah",
+              "customer_id": 2,
+              "postal_code": null,
+              "support_rep_id": 1
+            },
+            "revision": 2
+          }
+        },
+        {
+          "after": {
+            "email": "mira@example.invalid",
+            "company": "New Demo",
+            "country": "Germany",
+            "last_name": "Fixture",
+            "first_name": "Mira",
+            "customer_id": 100,
+            "support_rep_id": 1
+          },
+          "action": "INSERT",
+          "before": {
+            "row": null,
+            "revision": 0
+          }
+        }
+      ],
+      "mapping": {
+        "email": "Email",
+        "company": "Company",
+        "country": "Country",
+        "last_name": "Last name",
+        "first_name": "First name",
+        "customer_id": "Customer ID",
+        "support_rep_id": "Support rep ID"
+      },
+      "target_id": "ab384d50-dd61-4f7c-aeba-6a9b1a0aa9b8",
+      "source_sha256": "ea8432c4355f69907c066ff857f3959905e7e53be0d9f0724e7899636eb1e0d3"
+    },
+    "status": "PLANNED",
+    "receipt": null,
+    "created_at": "2026-10-06T06:17:57.270015+02:00",
+    "events": [],
+    "database": {
+      "customers": [
+        {
+          "customer_id": 1,
+          "company": "Old Demo"
+        },
+        {
+          "customer_id": 2,
+          "company": "Studio Demo"
+        }
+      ],
+      "invoices": [
+        {
+          "invoice_id": 1,
+          "customer_id": 1,
+          "total": "120.50"
+        }
+      ]
+    },
+    "label": "1 \u00b7 Preview",
+    "note": "No customer or invoice writes. One update, one insert, one unchanged row."
+  },
+  {
+    "id": "720a4311-2144-416a-bdbe-cbcaf9acc566",
+    "digest": "a7594bed8d000f5aa34f4743c77e6de9095cee2c6ce796b914aa6e002aa0902c",
+    "payload": {
+      "counts": {
+        "INSERT": 1,
+        "UPDATE": 1,
+        "UNCHANGED": 1
+      },
+      "adapter": "chinook-customer-v1",
+      "entries": [
+        {
+          "after": {
+            "email": "ada@example.invalid",
+            "company": "North Demo",
+            "country": "Poland",
+            "last_name": "Sample",
+            "first_name": "Ada",
+            "customer_id": 1,
+            "support_rep_id": 1
+          },
+          "action": "UPDATE",
+          "before": {
+            "row": {
+              "fax": null,
+              "city": null,
+              "email": "ada@example.invalid",
+              "phone": null,
+              "state": null,
+              "address": "Synthetic address 1",
+              "company": "Old Demo",
+              "country": "Poland",
+              "last_name": "Sample",
+              "first_name": "Ada",
+              "customer_id": 1,
+              "postal_code": null,
+              "support_rep_id": 1
+            },
+            "revision": 1
+          }
+        },
+        {
+          "after": {
+            "email": "noah@example.invalid",
+            "company": "Studio Demo",
+            "country": "Poland",
+            "last_name": "Example",
+            "first_name": "Noah",
+            "customer_id": 2,
+            "support_rep_id": 1
+          },
+          "action": "UNCHANGED",
+          "before": {
+            "row": {
+              "fax": null,
+              "city": null,
+              "email": "noah@example.invalid",
+              "phone": null,
+              "state": null,
+              "address": null,
+              "company": "Studio Demo",
+              "country": "Poland",
+              "last_name": "Example",
+              "first_name": "Noah",
+              "customer_id": 2,
+              "postal_code": null,
+              "support_rep_id": 1
+            },
+            "revision": 2
+          }
+        },
+        {
+          "after": {
+            "email": "mira@example.invalid",
+            "company": "New Demo",
+            "country": "Germany",
+            "last_name": "Fixture",
+            "first_name": "Mira",
+            "customer_id": 100,
+            "support_rep_id": 1
+          },
+          "action": "INSERT",
+          "before": {
+            "row": null,
+            "revision": 0
+          }
+        }
+      ],
+      "mapping": {
+        "email": "Email",
+        "company": "Company",
+        "country": "Country",
+        "last_name": "Last name",
+        "first_name": "First name",
+        "customer_id": "Customer ID",
+        "support_rep_id": "Support rep ID"
+      },
+      "target_id": "ab384d50-dd61-4f7c-aeba-6a9b1a0aa9b8",
+      "source_sha256": "ea8432c4355f69907c066ff857f3959905e7e53be0d9f0724e7899636eb1e0d3"
+    },
+    "status": "APPLIED",
+    "receipt": [
+      {
+        "applied": {
+          "row": {
+            "fax": null,
+            "city": null,
+            "email": "ada@example.invalid",
+            "phone": null,
+            "state": null,
+            "address": "Synthetic address 1",
+            "company": "North Demo",
+            "country": "Poland",
+            "last_name": "Sample",
+            "first_name": "Ada",
+            "customer_id": 1,
+            "postal_code": null,
+            "support_rep_id": 1
+          },
+          "revision": 3
+        },
+        "customer_id": 1
+      },
+      {
+        "applied": {
+          "row": {
+            "fax": null,
+            "city": null,
+            "email": "mira@example.invalid",
+            "phone": null,
+            "state": null,
+            "address": null,
+            "company": "New Demo",
+            "country": "Germany",
+            "last_name": "Fixture",
+            "first_name": "Mira",
+            "customer_id": 100,
+            "postal_code": null,
+            "support_rep_id": 1
+          },
+          "revision": 4
+        },
+        "customer_id": 100
+      }
+    ],
+    "created_at": "2026-10-06T06:17:57.270015+02:00",
+    "events": [
+      {
+        "action": "APPLY",
+        "at": "2026-10-06T06:17:57.428288+02:00"
+      }
+    ],
+    "database": {
+      "customers": [
+        {
+          "customer_id": 1,
+          "company": "North Demo"
+        },
+        {
+          "customer_id": 2,
+          "company": "Studio Demo"
+        },
+        {
+          "customer_id": 100,
+          "company": "New Demo"
+        }
+      ],
+      "invoices": [
+        {
+          "invoice_id": 1,
+          "customer_id": 1,
+          "total": "120.50"
+        }
+      ]
+    },
+    "label": "2 \u00b7 Apply",
+    "note": "Committed together: customers, receipt and one APPLY event. Invoice 1 still points to customer 1."
+  },
+  {
+    "id": "720a4311-2144-416a-bdbe-cbcaf9acc566",
+    "digest": "a7594bed8d000f5aa34f4743c77e6de9095cee2c6ce796b914aa6e002aa0902c",
+    "payload": {
+      "counts": {
+        "INSERT": 1,
+        "UPDATE": 1,
+        "UNCHANGED": 1
+      },
+      "adapter": "chinook-customer-v1",
+      "entries": [
+        {
+          "after": {
+            "email": "ada@example.invalid",
+            "company": "North Demo",
+            "country": "Poland",
+            "last_name": "Sample",
+            "first_name": "Ada",
+            "customer_id": 1,
+            "support_rep_id": 1
+          },
+          "action": "UPDATE",
+          "before": {
+            "row": {
+              "fax": null,
+              "city": null,
+              "email": "ada@example.invalid",
+              "phone": null,
+              "state": null,
+              "address": "Synthetic address 1",
+              "company": "Old Demo",
+              "country": "Poland",
+              "last_name": "Sample",
+              "first_name": "Ada",
+              "customer_id": 1,
+              "postal_code": null,
+              "support_rep_id": 1
+            },
+            "revision": 1
+          }
+        },
+        {
+          "after": {
+            "email": "noah@example.invalid",
+            "company": "Studio Demo",
+            "country": "Poland",
+            "last_name": "Example",
+            "first_name": "Noah",
+            "customer_id": 2,
+            "support_rep_id": 1
+          },
+          "action": "UNCHANGED",
+          "before": {
+            "row": {
+              "fax": null,
+              "city": null,
+              "email": "noah@example.invalid",
+              "phone": null,
+              "state": null,
+              "address": null,
+              "company": "Studio Demo",
+              "country": "Poland",
+              "last_name": "Example",
+              "first_name": "Noah",
+              "customer_id": 2,
+              "postal_code": null,
+              "support_rep_id": 1
+            },
+            "revision": 2
+          }
+        },
+        {
+          "after": {
+            "email": "mira@example.invalid",
+            "company": "New Demo",
+            "country": "Germany",
+            "last_name": "Fixture",
+            "first_name": "Mira",
+            "customer_id": 100,
+            "support_rep_id": 1
+          },
+          "action": "INSERT",
+          "before": {
+            "row": null,
+            "revision": 0
+          }
+        }
+      ],
+      "mapping": {
+        "email": "Email",
+        "company": "Company",
+        "country": "Country",
+        "last_name": "Last name",
+        "first_name": "First name",
+        "customer_id": "Customer ID",
+        "support_rep_id": "Support rep ID"
+      },
+      "target_id": "ab384d50-dd61-4f7c-aeba-6a9b1a0aa9b8",
+      "source_sha256": "ea8432c4355f69907c066ff857f3959905e7e53be0d9f0724e7899636eb1e0d3"
+    },
+    "status": "APPLIED",
+    "receipt": [
+      {
+        "applied": {
+          "row": {
+            "fax": null,
+            "city": null,
+            "email": "ada@example.invalid",
+            "phone": null,
+            "state": null,
+            "address": "Synthetic address 1",
+            "company": "North Demo",
+            "country": "Poland",
+            "last_name": "Sample",
+            "first_name": "Ada",
+            "customer_id": 1,
+            "postal_code": null,
+            "support_rep_id": 1
+          },
+          "revision": 3
+        },
+        "customer_id": 1
+      },
+      {
+        "applied": {
+          "row": {
+            "fax": null,
+            "city": null,
+            "email": "mira@example.invalid",
+            "phone": null,
+            "state": null,
+            "address": null,
+            "company": "New Demo",
+            "country": "Germany",
+            "last_name": "Fixture",
+            "first_name": "Mira",
+            "customer_id": 100,
+            "postal_code": null,
+            "support_rep_id": 1
+          },
+          "revision": 4
+        },
+        "customer_id": 100
+      }
+    ],
+    "created_at": "2026-10-06T06:17:57.270015+02:00",
+    "events": [
+      {
+        "action": "APPLY",
+        "at": "2026-10-06T06:17:57.428288+02:00"
+      }
+    ],
+    "database": {
+      "customers": [
+        {
+          "customer_id": 1,
+          "company": "North Demo"
+        },
+        {
+          "customer_id": 2,
+          "company": "Studio Demo"
+        },
+        {
+          "customer_id": 100,
+          "company": "New Demo"
+        }
+      ],
+      "invoices": [
+        {
+          "invoice_id": 1,
+          "customer_id": 1,
+          "total": "120.50"
+        }
+      ]
+    },
+    "label": "3 \u00b7 Retry",
+    "note": "Retry returned the existing outcome. Still three customers and one APPLY event."
+  },
+  {
+    "id": "720a4311-2144-416a-bdbe-cbcaf9acc566",
+    "digest": "a7594bed8d000f5aa34f4743c77e6de9095cee2c6ce796b914aa6e002aa0902c",
+    "payload": {
+      "counts": {
+        "INSERT": 1,
+        "UPDATE": 1,
+        "UNCHANGED": 1
+      },
+      "adapter": "chinook-customer-v1",
+      "entries": [
+        {
+          "after": {
+            "email": "ada@example.invalid",
+            "company": "North Demo",
+            "country": "Poland",
+            "last_name": "Sample",
+            "first_name": "Ada",
+            "customer_id": 1,
+            "support_rep_id": 1
+          },
+          "action": "UPDATE",
+          "before": {
+            "row": {
+              "fax": null,
+              "city": null,
+              "email": "ada@example.invalid",
+              "phone": null,
+              "state": null,
+              "address": "Synthetic address 1",
+              "company": "Old Demo",
+              "country": "Poland",
+              "last_name": "Sample",
+              "first_name": "Ada",
+              "customer_id": 1,
+              "postal_code": null,
+              "support_rep_id": 1
+            },
+            "revision": 1
+          }
+        },
+        {
+          "after": {
+            "email": "noah@example.invalid",
+            "company": "Studio Demo",
+            "country": "Poland",
+            "last_name": "Example",
+            "first_name": "Noah",
+            "customer_id": 2,
+            "support_rep_id": 1
+          },
+          "action": "UNCHANGED",
+          "before": {
+            "row": {
+              "fax": null,
+              "city": null,
+              "email": "noah@example.invalid",
+              "phone": null,
+              "state": null,
+              "address": null,
+              "company": "Studio Demo",
+              "country": "Poland",
+              "last_name": "Example",
+              "first_name": "Noah",
+              "customer_id": 2,
+              "postal_code": null,
+              "support_rep_id": 1
+            },
+            "revision": 2
+          }
+        },
+        {
+          "after": {
+            "email": "mira@example.invalid",
+            "company": "New Demo",
+            "country": "Germany",
+            "last_name": "Fixture",
+            "first_name": "Mira",
+            "customer_id": 100,
+            "support_rep_id": 1
+          },
+          "action": "INSERT",
+          "before": {
+            "row": null,
+            "revision": 0
+          }
+        }
+      ],
+      "mapping": {
+        "email": "Email",
+        "company": "Company",
+        "country": "Country",
+        "last_name": "Last name",
+        "first_name": "First name",
+        "customer_id": "Customer ID",
+        "support_rep_id": "Support rep ID"
+      },
+      "target_id": "ab384d50-dd61-4f7c-aeba-6a9b1a0aa9b8",
+      "source_sha256": "ea8432c4355f69907c066ff857f3959905e7e53be0d9f0724e7899636eb1e0d3"
+    },
+    "status": "UNDONE",
+    "receipt": [
+      {
+        "applied": {
+          "row": {
+            "fax": null,
+            "city": null,
+            "email": "ada@example.invalid",
+            "phone": null,
+            "state": null,
+            "address": "Synthetic address 1",
+            "company": "North Demo",
+            "country": "Poland",
+            "last_name": "Sample",
+            "first_name": "Ada",
+            "customer_id": 1,
+            "postal_code": null,
+            "support_rep_id": 1
+          },
+          "revision": 3
+        },
+        "customer_id": 1
+      },
+      {
+        "applied": {
+          "row": {
+            "fax": null,
+            "city": null,
+            "email": "mira@example.invalid",
+            "phone": null,
+            "state": null,
+            "address": null,
+            "company": "New Demo",
+            "country": "Germany",
+            "last_name": "Fixture",
+            "first_name": "Mira",
+            "customer_id": 100,
+            "postal_code": null,
+            "support_rep_id": 1
+          },
+          "revision": 4
+        },
+        "customer_id": 100
+      }
+    ],
+    "created_at": "2026-10-06T06:17:57.270015+02:00",
+    "events": [
+      {
+        "action": "APPLY",
+        "at": "2026-10-06T06:17:57.428288+02:00"
+      },
+      {
+        "action": "UNDO",
+        "at": "2026-10-06T06:17:57.678209+02:00"
+      }
+    ],
+    "database": {
+      "customers": [
+        {
+          "customer_id": 1,
+          "company": "Old Demo"
+        },
+        {
+          "customer_id": 2,
+          "company": "Studio Demo"
+        }
+      ],
+      "invoices": [
+        {
+          "invoice_id": 1,
+          "customer_id": 1,
+          "total": "120.50"
+        }
+      ]
+    },
+    "label": "4 \u00b7 Undo",
+    "note": "Original company restored; imported customer removed; invoice preserved."
+  },
+  {
+    "id": "20ff12cc-f0ef-4743-a4cf-98a294ddb264",
+    "digest": "4b6cc6db5c4d71e43a941dd8c335b5a57a048a3108b7a67450c6017b8f77b49c",
+    "payload": {
+      "counts": {
+        "INSERT": 1,
+        "UPDATE": 1,
+        "UNCHANGED": 1
+      },
+      "adapter": "chinook-customer-v1",
+      "entries": [
+        {
+          "after": {
+            "email": "ada@example.invalid",
+            "company": "North Demo",
+            "country": "Poland",
+            "last_name": "Sample",
+            "first_name": "Ada",
+            "customer_id": 1,
+            "support_rep_id": 1
+          },
+          "action": "UPDATE",
+          "before": {
+            "row": {
+              "fax": null,
+              "city": null,
+              "email": "ada@example.invalid",
+              "phone": null,
+              "state": null,
+              "address": "Synthetic address 1",
+              "company": "Old Demo",
+              "country": "Poland",
+              "last_name": "Sample",
+              "first_name": "Ada",
+              "customer_id": 1,
+              "postal_code": null,
+              "support_rep_id": 1
+            },
+            "revision": 5
+          }
+        },
+        {
+          "after": {
+            "email": "noah@example.invalid",
+            "company": "Studio Demo",
+            "country": "Poland",
+            "last_name": "Example",
+            "first_name": "Noah",
+            "customer_id": 2,
+            "support_rep_id": 1
+          },
+          "action": "UNCHANGED",
+          "before": {
+            "row": {
+              "fax": null,
+              "city": null,
+              "email": "noah@example.invalid",
+              "phone": null,
+              "state": null,
+              "address": null,
+              "company": "Studio Demo",
+              "country": "Poland",
+              "last_name": "Example",
+              "first_name": "Noah",
+              "customer_id": 2,
+              "postal_code": null,
+              "support_rep_id": 1
+            },
+            "revision": 2
+          }
+        },
+        {
+          "after": {
+            "email": "mira@example.invalid",
+            "company": "New Demo",
+            "country": "Germany",
+            "last_name": "Fixture",
+            "first_name": "Mira",
+            "customer_id": 100,
+            "support_rep_id": 1
+          },
+          "action": "INSERT",
+          "before": {
+            "row": null,
+            "revision": 6
+          }
+        }
+      ],
+      "mapping": {
+        "email": "Email",
+        "company": "Company",
+        "country": "Country",
+        "last_name": "Last name",
+        "first_name": "First name",
+        "customer_id": "Customer ID",
+        "support_rep_id": "Support rep ID"
+      },
+      "target_id": "ab384d50-dd61-4f7c-aeba-6a9b1a0aa9b8",
+      "source_sha256": "ea8432c4355f69907c066ff857f3959905e7e53be0d9f0724e7899636eb1e0d3"
+    },
+    "status": "PLANNED",
+    "receipt": null,
+    "created_at": "2026-10-06T06:17:57.826030+02:00",
+    "events": [],
+    "database": {
+      "customers": [
+        {
+          "customer_id": 1,
+          "company": "Human correction"
+        },
+        {
+          "customer_id": 2,
+          "company": "Studio Demo"
+        }
+      ],
+      "invoices": [
+        {
+          "invoice_id": 1,
+          "customer_id": 1,
+          "total": "120.50"
+        }
+      ]
+    },
+    "label": "5 \u00b7 Stale plan",
+    "note": "REFUSED: a human changed the target after preview. No partial import; their correction survives."
+  },
+  {
+    "id": "6b3a439a-bd47-4baf-b5d2-d5e8d405aa6e",
+    "digest": "b641d5040a6f59e003b6f410678677e68f03a029d90e14a535c1bc83922754d9",
+    "payload": {
+      "counts": {
+        "INSERT": 1,
+        "UPDATE": 1,
+        "UNCHANGED": 1
+      },
+      "adapter": "chinook-customer-v1",
+      "entries": [
+        {
+          "after": {
+            "email": "ada@example.invalid",
+            "company": "North Demo",
+            "country": "Poland",
+            "last_name": "Sample",
+            "first_name": "Ada",
+            "customer_id": 1,
+            "support_rep_id": 1
+          },
+          "action": "UPDATE",
+          "before": {
+            "row": {
+              "fax": null,
+              "city": null,
+              "email": "ada@example.invalid",
+              "phone": null,
+              "state": null,
+              "address": "Synthetic address 1",
+              "company": "Human correction",
+              "country": "Poland",
+              "last_name": "Sample",
+              "first_name": "Ada",
+              "customer_id": 1,
+              "postal_code": null,
+              "support_rep_id": 1
+            },
+            "revision": 7
+          }
+        },
+        {
+          "after": {
+            "email": "noah@example.invalid",
+            "company": "Studio Demo",
+            "country": "Poland",
+            "last_name": "Example",
+            "first_name": "Noah",
+            "customer_id": 2,
+            "support_rep_id": 1
+          },
+          "action": "UNCHANGED",
+          "before": {
+            "row": {
+              "fax": null,
+              "city": null,
+              "email": "noah@example.invalid",
+              "phone": null,
+              "state": null,
+              "address": null,
+              "company": "Studio Demo",
+              "country": "Poland",
+              "last_name": "Example",
+              "first_name": "Noah",
+              "customer_id": 2,
+              "postal_code": null,
+              "support_rep_id": 1
+            },
+            "revision": 2
+          }
+        },
+        {
+          "after": {
+            "email": "mira@example.invalid",
+            "company": "New Demo",
+            "country": "Germany",
+            "last_name": "Fixture",
+            "first_name": "Mira",
+            "customer_id": 100,
+            "support_rep_id": 1
+          },
+          "action": "INSERT",
+          "before": {
+            "row": null,
+            "revision": 6
+          }
+        }
+      ],
+      "mapping": {
+        "email": "Email",
+        "company": "Company",
+        "country": "Country",
+        "last_name": "Last name",
+        "first_name": "First name",
+        "customer_id": "Customer ID",
+        "support_rep_id": "Support rep ID"
+      },
+      "target_id": "ab384d50-dd61-4f7c-aeba-6a9b1a0aa9b8",
+      "source_sha256": "ea8432c4355f69907c066ff857f3959905e7e53be0d9f0724e7899636eb1e0d3"
+    },
+    "status": "APPLIED",
+    "receipt": [
+      {
+        "applied": {
+          "row": {
+            "fax": null,
+            "city": null,
+            "email": "ada@example.invalid",
+            "phone": null,
+            "state": null,
+            "address": "Synthetic address 1",
+            "company": "North Demo",
+            "country": "Poland",
+            "last_name": "Sample",
+            "first_name": "Ada",
+            "customer_id": 1,
+            "postal_code": null,
+            "support_rep_id": 1
+          },
+          "revision": 8
+        },
+        "customer_id": 1
+      },
+      {
+        "applied": {
+          "row": {
+            "fax": null,
+            "city": null,
+            "email": "mira@example.invalid",
+            "phone": null,
+            "state": null,
+            "address": null,
+            "company": "New Demo",
+            "country": "Germany",
+            "last_name": "Fixture",
+            "first_name": "Mira",
+            "customer_id": 100,
+            "postal_code": null,
+            "support_rep_id": 1
+          },
+          "revision": 9
+        },
+        "customer_id": 100
+      }
+    ],
+    "created_at": "2026-10-06T06:17:58.031833+02:00",
+    "events": [
+      {
+        "action": "APPLY",
+        "at": "2026-10-06T06:17:58.079858+02:00"
+      }
+    ],
+    "database": {
+      "customers": [
+        {
+          "customer_id": 1,
+          "company": "North Demo"
+        },
+        {
+          "customer_id": 2,
+          "company": "Studio Demo"
+        },
+        {
+          "customer_id": 100,
+          "company": "New Demo"
+        }
+      ],
+      "invoices": [
+        {
+          "invoice_id": 1,
+          "customer_id": 1,
+          "total": "120.50"
+        },
+        {
+          "invoice_id": 2,
+          "customer_id": 100,
+          "total": "42.00"
+        }
+      ]
+    },
+    "label": "6 \u00b7 Protected undo",
+    "note": "REFUSED: the new customer now has an invoice. No rows undone; later business history is preserved."
+  }
+]

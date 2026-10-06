@@ -1,0 +1,10 @@
+{
+  "upstream": "https://github.com/lerocha/chinook-database",
+  "revision": "7f67772503d71ba90f19283c38e93923addb43fa",
+  "source_path": "ChinookDatabase/DataSources/Chinook_PostgreSql.sql",
+  "extraction": "CREATE TABLE album through last FK index; no database commands or upstream data",
+  "sha256": {
+    "schema.sql": "1e18c46266c049f842bf3e1290f32bafd543fd4fcda6bb37dd97ecbd0355d0d4",
+    "LICENSE.md": "5064d720db431474b0a0b0cef9d2b5e362b6c6f80602b35c6443b07cbc979f77"
+  }
+}

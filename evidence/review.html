@@ -1,0 +1,251 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Import Rehearsal · Evidence review</title>
+<style>
+:root{color-scheme:dark;--bg:#0c1422;--panel:#131f31;--line:#2c3c52;--muted:#a9b7c9;--ink:#eef4ff;--teal:#72e0c5;--gold:#ffd38b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,sans-serif}
+main{max-width:1200px;margin:auto;padding:48px 28px}header{border-bottom:1px solid var(--line);padding-bottom:30px}
+.eyebrow{color:var(--teal);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+h1{font-size:clamp(32px,5vw,54px);letter-spacing:-.045em;line-height:1.08;margin:18px 0}h2{font-size:23px;margin:0 0 12px}
+p{max-width:760px}small,.muted{color:var(--muted)}nav{display:flex;gap:9px;flex-wrap:wrap;margin:26px 0}
+button{cursor:pointer;background:transparent;color:var(--ink);border:1px solid var(--line);padding:11px 16px;border-radius:8px;font:inherit}
+button[aria-selected=true]{background:var(--teal);color:#0c1422;border-color:var(--teal)}button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0}.card,.meta,.notice{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:20px}
+.card strong{display:block;font-size:32px;color:var(--teal)}.status{display:inline-block;background:#1c3541;color:var(--teal);padding:4px 12px;border-radius:30px;font-size:13px;font-weight:700}
+.notice{border-left:4px solid var(--gold);margin:18px 0;color:var(--gold)}code{overflow-wrap:anywhere;font-size:13px}.meta{margin:18px 0;font-size:14px}.meta div{margin:6px 0}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;min-width:690px;text-align:left}td,th{padding:14px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.diff{display:block}.old{color:var(--muted)}.new{color:var(--teal)}footer{margin-top:28px;color:var(--muted);font-size:13px}details{margin:18px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere}
+@media(max-width:650px){main{padding:24px 16px}.grid{grid-template-columns:1fr}.card{padding:12px 18px}.card strong{font-size:25px}}
+</style></head><body><main><header><div class="eyebrow">PostgreSQL · Chinook adapter · Independent demonstration</div>
+<h1>Review first.<br>Apply exactly. Undo carefully.</h1><p class="muted">A real database import with an inspectable plan. This read-only evidence file cannot apply changes. Synthetic customers; existing invoice relationships.</p></header>
+<nav aria-label="Evidence steps"><button id="tab-0" aria-selected="true" aria-controls="step-0" onclick="selectStep(0)">1 · Preview</button><button id="tab-1" aria-selected="false" aria-controls="step-1" onclick="selectStep(1)">2 · Apply</button><button id="tab-2" aria-selected="false" aria-controls="step-2" onclick="selectStep(2)">3 · Retry</button><button id="tab-3" aria-selected="false" aria-controls="step-3" onclick="selectStep(3)">4 · Undo</button><button id="tab-4" aria-selected="false" aria-controls="step-4" onclick="selectStep(4)">5 · Stale plan</button><button id="tab-5" aria-selected="false" aria-controls="step-5" onclick="selectStep(5)">6 · Protected undo</button></nav>
+<section id="step-0" aria-labelledby="tab-0" >
+<h2>1 · Preview <span class="status">PLANNED</span></h2>
+<div class="notice">No customer or invoice writes. One update, one insert, one unchanged row.</div>
+<div class="grid"><div class="card"><span>Insert</span><strong>1</strong><small>Planned customer rows</small></div><div class="card"><span>Update</span><strong>1</strong><small>Planned customer rows</small></div><div class="card"><span>Unchanged</span><strong>1</strong><small>Planned customer rows</small></div></div>
+<div class="meta"><div>Plan <code>720a4311-2144-416a-bdbe-cbcaf9acc566</code></div><div>Review digest <code>a7594bed8d000f5aa34f4743c77e6de9095cee2c6ce796b914aa6e002aa0902c</code></div><div>Source SHA-256 <code>ea8432c4355f69907c066ff857f3959905e7e53be0d9f0724e7899636eb1e0d3</code></div><div>Adapter <code>chinook-customer-v1</code> · Target <code>ab384d50-dd61-4f7c-aeba-6a9b1a0aa9b8</code></div></div>
+<div class="table-wrap"><table><thead><tr><th>ID / action</th><th>Customer</th><th>Before → proposed</th><th>Version at preview</th></tr></thead><tbody>
+<tr><td>1<br><small>UPDATE</small></td><td>Ada Sample<br><small>ada@example.invalid</small></td><td>
+<span class="diff"><small>company</small> <span class="old">Old Demo</span> → <span class="new">North Demo</span></span></td><td>1</td></tr><tr><td>2<br><small>UNCHANGED</small></td><td>Noah Example<br><small>noah@example.invalid</small></td><td>
+No field changes</td><td>2</td></tr><tr><td>100<br><small>INSERT</small></td><td>Mira Fixture<br><small>mira@example.invalid</small></td><td>
+<span class="diff"><small>first_name</small> <span class="old">∅</span> → <span class="new">Mira</span></span><span class="diff"><small>last_name</small> <span class="old">∅</span> → <span class="new">Fixture</span></span><span class="diff"><small>email</small> <span class="old">∅</span> → <span class="new">mira@example.invalid</span></span><span class="diff"><small>company</small> <span class="old">∅</span> → <span class="new">New Demo</span></span><span class="diff"><small>country</small> <span class="old">∅</span> → <span class="new">Germany</span></span><span class="diff"><small>support_rep_id</small> <span class="old">∅</span> → <span class="new">1</span></span></td><td>0</td></tr>
+</tbody></table></div>
+<div class="meta"><strong>Database readback at this step</strong><pre>{
+  "customers": [
+    {
+      "company": "Old Demo",
+      "customer_id": 1
+    },
+    {
+      "company": "Studio Demo",
+      "customer_id": 2
+    }
+  ],
+  "invoices": [
+    {
+      "customer_id": 1,
+      "invoice_id": 1,
+      "total": "120.50"
+    }
+  ]
+}</pre></div>
+<details><summary>Committed transaction events</summary><pre>[]</pre></details>
+</section><section id="step-1" aria-labelledby="tab-1" hidden>
+<h2>2 · Apply <span class="status">APPLIED</span></h2>
+<div class="notice">Committed together: customers, receipt and one APPLY event. Invoice 1 still points to customer 1.</div>
+<div class="grid"><div class="card"><span>Insert</span><strong>1</strong><small>Planned customer rows</small></div><div class="card"><span>Update</span><strong>1</strong><small>Planned customer rows</small></div><div class="card"><span>Unchanged</span><strong>1</strong><small>Planned customer rows</small></div></div>
+<div class="meta"><div>Plan <code>720a4311-2144-416a-bdbe-cbcaf9acc566</code></div><div>Review digest <code>a7594bed8d000f5aa34f4743c77e6de9095cee2c6ce796b914aa6e002aa0902c</code></div><div>Source SHA-256 <code>ea8432c4355f69907c066ff857f3959905e7e53be0d9f0724e7899636eb1e0d3</code></div><div>Adapter <code>chinook-customer-v1</code> · Target <code>ab384d50-dd61-4f7c-aeba-6a9b1a0aa9b8</code></div></div>
+<div class="table-wrap"><table><thead><tr><th>ID / action</th><th>Customer</th><th>Before → proposed</th><th>Version at preview</th></tr></thead><tbody>
+<tr><td>1<br><small>UPDATE</small></td><td>Ada Sample<br><small>ada@example.invalid</small></td><td>
+<span class="diff"><small>company</small> <span class="old">Old Demo</span> → <span class="new">North Demo</span></span></td><td>1</td></tr><tr><td>2<br><small>UNCHANGED</small></td><td>Noah Example<br><small>noah@example.invalid</small></td><td>
+No field changes</td><td>2</td></tr><tr><td>100<br><small>INSERT</small></td><td>Mira Fixture<br><small>mira@example.invalid</small></td><td>
+<span class="diff"><small>first_name</small> <span class="old">∅</span> → <span class="new">Mira</span></span><span class="diff"><small>last_name</small> <span class="old">∅</span> → <span class="new">Fixture</span></span><span class="diff"><small>email</small> <span class="old">∅</span> → <span class="new">mira@example.invalid</span></span><span class="diff"><small>company</small> <span class="old">∅</span> → <span class="new">New Demo</span></span><span class="diff"><small>country</small> <span class="old">∅</span> → <span class="new">Germany</span></span><span class="diff"><small>support_rep_id</small> <span class="old">∅</span> → <span class="new">1</span></span></td><td>0</td></tr>
+</tbody></table></div>
+<div class="meta"><strong>Database readback at this step</strong><pre>{
+  "customers": [
+    {
+      "company": "North Demo",
+      "customer_id": 1
+    },
+    {
+      "company": "Studio Demo",
+      "customer_id": 2
+    },
+    {
+      "company": "New Demo",
+      "customer_id": 100
+    }
+  ],
+  "invoices": [
+    {
+      "customer_id": 1,
+      "invoice_id": 1,
+      "total": "120.50"
+    }
+  ]
+}</pre></div>
+<details><summary>Committed transaction events</summary><pre>[
+  {
+    "action": "APPLY",
+    "at": "2026-10-06T06:17:57.428288+02:00"
+  }
+]</pre></details>
+</section><section id="step-2" aria-labelledby="tab-2" hidden>
+<h2>3 · Retry <span class="status">APPLIED</span></h2>
+<div class="notice">Retry returned the existing outcome. Still three customers and one APPLY event.</div>
+<div class="grid"><div class="card"><span>Insert</span><strong>1</strong><small>Planned customer rows</small></div><div class="card"><span>Update</span><strong>1</strong><small>Planned customer rows</small></div><div class="card"><span>Unchanged</span><strong>1</strong><small>Planned customer rows</small></div></div>
+<div class="meta"><div>Plan <code>720a4311-2144-416a-bdbe-cbcaf9acc566</code></div><div>Review digest <code>a7594bed8d000f5aa34f4743c77e6de9095cee2c6ce796b914aa6e002aa0902c</code></div><div>Source SHA-256 <code>ea8432c4355f69907c066ff857f3959905e7e53be0d9f0724e7899636eb1e0d3</code></div><div>Adapter <code>chinook-customer-v1</code> · Target <code>ab384d50-dd61-4f7c-aeba-6a9b1a0aa9b8</code></div></div>
+<div class="table-wrap"><table><thead><tr><th>ID / action</th><th>Customer</th><th>Before → proposed</th><th>Version at preview</th></tr></thead><tbody>
+<tr><td>1<br><small>UPDATE</small></td><td>Ada Sample<br><small>ada@example.invalid</small></td><td>
+<span class="diff"><small>company</small> <span class="old">Old Demo</span> → <span class="new">North Demo</span></span></td><td>1</td></tr><tr><td>2<br><small>UNCHANGED</small></td><td>Noah Example<br><small>noah@example.invalid</small></td><td>
+No field changes</td><td>2</td></tr><tr><td>100<br><small>INSERT</small></td><td>Mira Fixture<br><small>mira@example.invalid</small></td><td>
+<span class="diff"><small>first_name</small> <span class="old">∅</span> → <span class="new">Mira</span></span><span class="diff"><small>last_name</small> <span class="old">∅</span> → <span class="new">Fixture</span></span><span class="diff"><small>email</small> <span class="old">∅</span> → <span class="new">mira@example.invalid</span></span><span class="diff"><small>company</small> <span class="old">∅</span> → <span class="new">New Demo</span></span><span class="diff"><small>country</small> <span class="old">∅</span> → <span class="new">Germany</span></span><span class="diff"><small>support_rep_id</small> <span class="old">∅</span> → <span class="new">1</span></span></td><td>0</td></tr>
+</tbody></table></div>
+<div class="meta"><strong>Database readback at this step</strong><pre>{
+  "customers": [
+    {
+      "company": "North Demo",
+      "customer_id": 1
+    },
+    {
+      "company": "Studio Demo",
+      "customer_id": 2
+    },
+    {
+      "company": "New Demo",
+      "customer_id": 100
+    }
+  ],
+  "invoices": [
+    {
+      "customer_id": 1,
+      "invoice_id": 1,
+      "total": "120.50"
+    }
+  ]
+}</pre></div>
+<details><summary>Committed transaction events</summary><pre>[
+  {
+    "action": "APPLY",
+    "at": "2026-10-06T06:17:57.428288+02:00"
+  }
+]</pre></details>
+</section><section id="step-3" aria-labelledby="tab-3" hidden>
+<h2>4 · Undo <span class="status">UNDONE</span></h2>
+<div class="notice">Original company restored; imported customer removed; invoice preserved.</div>
+<div class="grid"><div class="card"><span>Insert</span><strong>1</strong><small>Planned customer rows</small></div><div class="card"><span>Update</span><strong>1</strong><small>Planned customer rows</small></div><div class="card"><span>Unchanged</span><strong>1</strong><small>Planned customer rows</small></div></div>
+<div class="meta"><div>Plan <code>720a4311-2144-416a-bdbe-cbcaf9acc566</code></div><div>Review digest <code>a7594bed8d000f5aa34f4743c77e6de9095cee2c6ce796b914aa6e002aa0902c</code></div><div>Source SHA-256 <code>ea8432c4355f69907c066ff857f3959905e7e53be0d9f0724e7899636eb1e0d3</code></div><div>Adapter <code>chinook-customer-v1</code> · Target <code>ab384d50-dd61-4f7c-aeba-6a9b1a0aa9b8</code></div></div>
+<div class="table-wrap"><table><thead><tr><th>ID / action</th><th>Customer</th><th>Before → proposed</th><th>Version at preview</th></tr></thead><tbody>
+<tr><td>1<br><small>UPDATE</small></td><td>Ada Sample<br><small>ada@example.invalid</small></td><td>
+<span class="diff"><small>company</small> <span class="old">Old Demo</span> → <span class="new">North Demo</span></span></td><td>1</td></tr><tr><td>2<br><small>UNCHANGED</small></td><td>Noah Example<br><small>noah@example.invalid</small></td><td>
+No field changes</td><td>2</td></tr><tr><td>100<br><small>INSERT</small></td><td>Mira Fixture<br><small>mira@example.invalid</small></td><td>
+<span class="diff"><small>first_name</small> <span class="old">∅</span> → <span class="new">Mira</span></span><span class="diff"><small>last_name</small> <span class="old">∅</span> → <span class="new">Fixture</span></span><span class="diff"><small>email</small> <span class="old">∅</span> → <span class="new">mira@example.invalid</span></span><span class="diff"><small>company</small> <span class="old">∅</span> → <span class="new">New Demo</span></span><span class="diff"><small>country</small> <span class="old">∅</span> → <span class="new">Germany</span></span><span class="diff"><small>support_rep_id</small> <span class="old">∅</span> → <span class="new">1</span></span></td><td>0</td></tr>
+</tbody></table></div>
+<div class="meta"><strong>Database readback at this step</strong><pre>{
+  "customers": [
+    {
+      "company": "Old Demo",
+      "customer_id": 1
+    },
+    {
+      "company": "Studio Demo",
+      "customer_id": 2
+    }
+  ],
+  "invoices": [
+    {
+      "customer_id": 1,
+      "invoice_id": 1,
+      "total": "120.50"
+    }
+  ]
+}</pre></div>
+<details><summary>Committed transaction events</summary><pre>[
+  {
+    "action": "APPLY",
+    "at": "2026-10-06T06:17:57.428288+02:00"
+  },
+  {
+    "action": "UNDO",
+    "at": "2026-10-06T06:17:57.678209+02:00"
+  }
+]</pre></details>
+</section><section id="step-4" aria-labelledby="tab-4" hidden>
+<h2>5 · Stale plan <span class="status">PLANNED</span></h2>
+<div class="notice">REFUSED: a human changed the target after preview. No partial import; their correction survives.</div>
+<div class="grid"><div class="card"><span>Insert</span><strong>1</strong><small>Planned customer rows</small></div><div class="card"><span>Update</span><strong>1</strong><small>Planned customer rows</small></div><div class="card"><span>Unchanged</span><strong>1</strong><small>Planned customer rows</small></div></div>
+<div class="meta"><div>Plan <code>20ff12cc-f0ef-4743-a4cf-98a294ddb264</code></div><div>Review digest <code>4b6cc6db5c4d71e43a941dd8c335b5a57a048a3108b7a67450c6017b8f77b49c</code></div><div>Source SHA-256 <code>ea8432c4355f69907c066ff857f3959905e7e53be0d9f0724e7899636eb1e0d3</code></div><div>Adapter <code>chinook-customer-v1</code> · Target <code>ab384d50-dd61-4f7c-aeba-6a9b1a0aa9b8</code></div></div>
+<div class="table-wrap"><table><thead><tr><th>ID / action</th><th>Customer</th><th>Before → proposed</th><th>Version at preview</th></tr></thead><tbody>
+<tr><td>1<br><small>UPDATE</small></td><td>Ada Sample<br><small>ada@example.invalid</small></td><td>
+<span class="diff"><small>company</small> <span class="old">Old Demo</span> → <span class="new">North Demo</span></span></td><td>5</td></tr><tr><td>2<br><small>UNCHANGED</small></td><td>Noah Example<br><small>noah@example.invalid</small></td><td>
+No field changes</td><td>2</td></tr><tr><td>100<br><small>INSERT</small></td><td>Mira Fixture<br><small>mira@example.invalid</small></td><td>
+<span class="diff"><small>first_name</small> <span class="old">∅</span> → <span class="new">Mira</span></span><span class="diff"><small>last_name</small> <span class="old">∅</span> → <span class="new">Fixture</span></span><span class="diff"><small>email</small> <span class="old">∅</span> → <span class="new">mira@example.invalid</span></span><span class="diff"><small>company</small> <span class="old">∅</span> → <span class="new">New Demo</span></span><span class="diff"><small>country</small> <span class="old">∅</span> → <span class="new">Germany</span></span><span class="diff"><small>support_rep_id</small> <span class="old">∅</span> → <span class="new">1</span></span></td><td>6</td></tr>
+</tbody></table></div>
+<div class="meta"><strong>Database readback at this step</strong><pre>{
+  "customers": [
+    {
+      "company": "Human correction",
+      "customer_id": 1
+    },
+    {
+      "company": "Studio Demo",
+      "customer_id": 2
+    }
+  ],
+  "invoices": [
+    {
+      "customer_id": 1,
+      "invoice_id": 1,
+      "total": "120.50"
+    }
+  ]
+}</pre></div>
+<details><summary>Committed transaction events</summary><pre>[]</pre></details>
+</section><section id="step-5" aria-labelledby="tab-5" hidden>
+<h2>6 · Protected undo <span class="status">APPLIED</span></h2>
+<div class="notice">REFUSED: the new customer now has an invoice. No rows undone; later business history is preserved.</div>
+<div class="grid"><div class="card"><span>Insert</span><strong>1</strong><small>Planned customer rows</small></div><div class="card"><span>Update</span><strong>1</strong><small>Planned customer rows</small></div><div class="card"><span>Unchanged</span><strong>1</strong><small>Planned customer rows</small></div></div>
+<div class="meta"><div>Plan <code>6b3a439a-bd47-4baf-b5d2-d5e8d405aa6e</code></div><div>Review digest <code>b641d5040a6f59e003b6f410678677e68f03a029d90e14a535c1bc83922754d9</code></div><div>Source SHA-256 <code>ea8432c4355f69907c066ff857f3959905e7e53be0d9f0724e7899636eb1e0d3</code></div><div>Adapter <code>chinook-customer-v1</code> · Target <code>ab384d50-dd61-4f7c-aeba-6a9b1a0aa9b8</code></div></div>
+<div class="table-wrap"><table><thead><tr><th>ID / action</th><th>Customer</th><th>Before → proposed</th><th>Version at preview</th></tr></thead><tbody>
+<tr><td>1<br><small>UPDATE</small></td><td>Ada Sample<br><small>ada@example.invalid</small></td><td>
+<span class="diff"><small>company</small> <span class="old">Human correction</span> → <span class="new">North Demo</span></span></td><td>7</td></tr><tr><td>2<br><small>UNCHANGED</small></td><td>Noah Example<br><small>noah@example.invalid</small></td><td>
+No field changes</td><td>2</td></tr><tr><td>100<br><small>INSERT</small></td><td>Mira Fixture<br><small>mira@example.invalid</small></td><td>
+<span class="diff"><small>first_name</small> <span class="old">∅</span> → <span class="new">Mira</span></span><span class="diff"><small>last_name</small> <span class="old">∅</span> → <span class="new">Fixture</span></span><span class="diff"><small>email</small> <span class="old">∅</span> → <span class="new">mira@example.invalid</span></span><span class="diff"><small>company</small> <span class="old">∅</span> → <span class="new">New Demo</span></span><span class="diff"><small>country</small> <span class="old">∅</span> → <span class="new">Germany</span></span><span class="diff"><small>support_rep_id</small> <span class="old">∅</span> → <span class="new">1</span></span></td><td>6</td></tr>
+</tbody></table></div>
+<div class="meta"><strong>Database readback at this step</strong><pre>{
+  "customers": [
+    {
+      "company": "North Demo",
+      "customer_id": 1
+    },
+    {
+      "company": "Studio Demo",
+      "customer_id": 2
+    },
+    {
+      "company": "New Demo",
+      "customer_id": 100
+    }
+  ],
+  "invoices": [
+    {
+      "customer_id": 1,
+      "invoice_id": 1,
+      "total": "120.50"
+    },
+    {
+      "customer_id": 100,
+      "invoice_id": 2,
+      "total": "42.00"
+    }
+  ]
+}</pre></div>
+<details><summary>Committed transaction events</summary><pre>[
+  {
+    "action": "APPLY",
+    "at": "2026-10-06T06:17:58.079858+02:00"
+  }
+]</pre></details>
+</section>
+<footer>Snapshot, not a live status monitor. Re-read the plan before acting. Reviews contain row data: use synthetic fixtures for public sharing. An undo refusal preserves later work; it is not a claim that every migration is reversible.</footer></main>
+<script>function selectStep(i){document.querySelectorAll('section').forEach((s,j)=>s.hidden=j!==i);document.querySelectorAll('nav button').forEach((b,j)=>b.setAttribute('aria-selected',String(j===i)));}</script></body></html>
