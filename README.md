@@ -1,9 +1,10 @@
-# PostgreSQL Import Rehearsal
+# PostgreSQL Import Rehearsal — plan, apply and guarded undo
+
+Review the exact changes before a database import. Apply an immutable plan transactionally, repeat requests without duplicate inserts, and refuse undo when later work would be damaged.
 
 <!-- portfolio-navigation:start -->
 [← Project index](https://github.com/Hadezu#selected-implementations) · [Data migration](https://work.matiushkin.com/en/services/data-migration) · [Describe a similar task](https://work.matiushkin.com/en/contact?example=services%2Fdata-migration)
 
-**Review format:** Local PostgreSQL implementation and downloadable review. The portfolio example is a separate related demonstration.
 
 [Related interactive example](https://work.matiushkin.com/en/proof/migration) — a separate portfolio demonstration of the same problem.
 <!-- portfolio-navigation:end -->
@@ -11,8 +12,6 @@
 [![Verify real PostgreSQL](https://github.com/Hadezu/postgres-import-rehearsal/actions/workflows/verify.yml/badge.svg)](https://github.com/Hadezu/postgres-import-rehearsal/actions/workflows/verify.yml)
 
 **Review a CSV import before it writes. Apply the exact plan. Refuse an undo that would damage later work.**
-
-Independent engineering example by [Ivan Matiushkin](https://work.matiushkin.com/en), extending the existing [Chinook](https://github.com/lerocha/chinook-database) relational schema. All people and businesses here are synthetic. This is not a client deployment.
 
 ![Stale target refused, with an inspectable customer plan](evidence/desktop.png)
 
@@ -108,3 +107,13 @@ Original test recording retained as supporting evidence. For the scenario, resul
 [Download the original recording](https://github.com/Hadezu/postgres-import-rehearsal/releases/download/v0.1.0/demo.webm)
 
 </details>
+
+
+**Schema foundation:** [Chinook](https://github.com/lerocha/chinook-database); see the repository’s attribution and licence files.
+
+
+## Discuss a similar project
+
+I develop complete applications, integrations and focused improvements to existing software. Send the workflow you want to improve and the outcome you need; we can define the scope, delivery stages and acceptance checks together.
+
+**[Discuss your project](https://work.matiushkin.com/en/contact)** · [More implementations](https://github.com/Hadezu) · [Project context and verification scope](PRESENTATION-SCOPE.md)
